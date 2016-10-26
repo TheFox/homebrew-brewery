@@ -1,0 +1,10 @@
+{
+	"folders":[
+		{
+			"path": ".",
+			"name": "TheFox' Homebrew Tap",
+			"folder_exclude_patterns": [ ],
+			"file_exclude_patterns": [ ]
+		}
+	]
+}
