@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -e
+DATE=$(date +"%Y-%m-%d %H:%M:%S %z")
+SCRIPT_BASEDIR=$(dirname $0)
+SCRIPT_BASENAME=$(basename $0)
+GITHUB_BASE_URL="https://github.com/TheFox"
+formula="$1"
+version="$2"
+
+
+if [ "${formula}" = "" ] || [ "${version}" = "" ]; then
+	echo "Usage: ${SCRIPT_BASENAME} FORMULA VERSION"
+	exit 3
+fi
+which sha256sum &> /dev/null || { echo 'sha256sum not installed'; exit 1; }
+which curl &> /dev/null || { echo 'curl not installed'; exit 1; }
+
+cd "${SCRIPT_BASEDIR}/.."
+mkdir -p tmp
+
+vversion="v${version}"
+formula_file_path="${formula}.rb"
+formula_skel_file_path="skel/${formula_file_path}"
+gz_file_name="${vversion}.tar.gz"
+tmp_gz_file_path="tmp/${gz_file_name}"
+url="${GITHUB_BASE_URL}/${formula}/archive/${gz_file_name}"
+
+echo "download gz file '${url}'"
+curl -sSL -o "${tmp_gz_file_path}" "${url}"
+
+sha256hex=$(sha256sum "${tmp_gz_file_path}" | awk '{ print $1 }')
+echo "sha256 hex '${sha256hex}'"
+
+sed -e "
+s|%VERSION%|${vversion}|g;
+s|%SHA256%|${sha256hex}|g;
+" "${formula_skel_file_path}" > "${formula_file_path}"
+
+echo 'add to git'
+git add "${formula_file_path}"
+
+echo 'git commit'
+git commit -S --author='Mr. Robot <robot@fox21.at>' -m "${formula} ${version}"
