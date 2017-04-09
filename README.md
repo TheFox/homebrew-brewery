@@ -15,11 +15,11 @@
 1. Create template file in [`skel`](skel).
 2. Run release script
 
-	./bin/release name 1.2.3
+		./bin/release name 1.2.3
 
 3. Test formulae local:
 
-	brew install ./name.rb
+		brew install ./name.rb
 
 ## Add a formulae from foreign Source
 
