@@ -1,22 +1,27 @@
 #!/usr/bin/env bash
 
-set -e
-DATE=$(date +"%Y-%m-%d %H:%M:%S %z")
-SCRIPT_BASEDIR=$(dirname $0)
-SCRIPT_BASENAME=$(basename $0)
-GITHUB_BASE_URL="https://github.com/TheFox"
+# 1. Downloads gzip from GitHub release (Git Tag).
+# 2. Take template from 'skel/' by formula name and
+#    commit it to root directory.
+
+SCRIPT_BASEDIR=$(dirname "$0")
+SCRIPT_BASENAME=$(basename "$0")
+GITHUB_BASE_URL=${GITHUB_BASE_URL:-https://github.com/TheFox}
 formula="$1"
 version="$2"
 
 
 if [ "${formula}" = "" ] || [ "${version}" = "" ]; then
-	echo "Usage: ${SCRIPT_BASENAME} FORMULA VERSION"
+	echo "Usage: ${SCRIPT_BASENAME} <formula> <version>"
+	echo
+	echo "version without 'v' at the beginning."
 	exit 3
 fi
-which sha256sum &> /dev/null || { echo 'sha256sum not installed'; exit 1; }
-which curl &> /dev/null || { echo 'curl not installed'; exit 1; }
+which sha256sum &> /dev/null || { echo 'ERROR: sha256sum not found in PATH'; exit 1; }
+which curl &> /dev/null || { echo 'ERROR: curl not found in PATH'; exit 1; }
 
-cd "${SCRIPT_BASEDIR}/.."
+set -e
+pushd "${SCRIPT_BASEDIR}/.."
 mkdir -p tmp
 
 vversion="v${version}"
