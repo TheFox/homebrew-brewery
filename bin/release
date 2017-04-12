@@ -15,7 +15,7 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
 	echo 'WARNING: it is recommented to run this script under macOS. not tested under other operating systems.'
 	exit 1
 fi
-if [ "${formula}" = "" ] || [ "${version}" = "" ]; then
+if [[ -z "${formula}" ]] || [[ -z "${version}" ]]; then
 	echo "Usage: ${SCRIPT_BASENAME} <formula> <version>"
 	echo
 	echo "version without 'v' at the beginning."
