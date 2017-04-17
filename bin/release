@@ -26,20 +26,21 @@ which curl &> /dev/null || { echo 'ERROR: curl not found in PATH'; exit 1; }
 which stat &> /dev/null || { echo 'ERROR: stat not found in PATH'; exit 1; }
 
 set -e
-pushd "${SCRIPT_BASEDIR}/.."
+cd "${SCRIPT_BASEDIR}/.."
 mkdir -p tmp
 
 # Create variables.
 vversion="v${version}"
 formula_file_path="${formula}.rb"
 formula_skel_file_path="skel/${formula_file_path}"
-gz_file_name="${vversion}.tar.gz"
-tmp_gz_file_path="tmp/${gz_file_name}"
-url="${GITHUB_BASE_URL}/${formula}/archive/${gz_file_name}"
+remote_gz_file_name="${vversion}.tar.gz"
+local_gz_file_name="${formula}_${remote_gz_file_name}"
+tmp_gz_file_path="tmp/${local_gz_file_name}"
+url="${GITHUB_BASE_URL}/${formula}/archive/${remote_gz_file_name}"
 
 # Download release file from GitHub.
 echo "download gz file '${url}'"
-if ! curl -SL --ssl -o "${tmp_gz_file_path}" "${url}"; then
+if ! curl -s -S -L --ssl -o "${tmp_gz_file_path}" "${url}"; then
 	echo 'ERROR: curl failed'
 	exit 1
 fi
