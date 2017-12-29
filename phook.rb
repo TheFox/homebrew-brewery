@@ -8,6 +8,7 @@ class Phook < Formula
   depends_on "make" => :build
 
   def install
+    ENV.O0 # Any optimization breaks the build
     system "make"
 
     bin.install "phook"
