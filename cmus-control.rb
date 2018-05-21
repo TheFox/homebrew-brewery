@@ -6,7 +6,7 @@ class CmusControl < Formula
   sha256 "d99f061990cd83972dd1a793829cbde9cc3f1548a666d599a206cd8ba4dece0f"
 
   depends_on "cmake" => :build
-  depends_on "cmus" => :run
+  depends_on "cmus"
 
   def install
     system "make", "build/release"
