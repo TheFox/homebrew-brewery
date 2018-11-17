@@ -68,5 +68,4 @@ echo 'add to git'
 git add "${formula_file_path}"
 
 echo 'git commit'
-# --author='Mr. Robot <robot@fox21.at>'
 git commit -S -m "${formula} ${version}"
