@@ -12,9 +12,19 @@ class WalletCpp < Formula
   depends_on "gnuplot" => "5.0"
 
   def install
-    system "./bin/build.sh"
+    system "mkdir build"
+    Dir.chdir("build") do
+      system "cmake",
+        "-DPROJECT_INSTALL_PREFIX=#{prefix}",
+        "-DPROJECT_SHARE_PREFIX=#{share}"
+        "-DCMAKE_BUILD_TYPE=release",
+        "-DWALLETCPP_GNUPLOT_SUPPORT=ON",
+        ".."
+      system "make wallet"
+      bin.install "bin/wallet"
+    end
 
-    bin.install "build_release/bin/wallet"
+    share.install Dir["resources"]
   end
 
   test do
