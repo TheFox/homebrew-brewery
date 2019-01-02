@@ -20,7 +20,7 @@
 2. Run release script
 
 	```bash
-	$ ./bin/release name 1.2.3
+	$ ./bin/release.sh name 1.2.3
 	```
 
 3. Test formulae local:
@@ -35,7 +35,7 @@ In [`bin/release`](bin/release) the `GITHUB_BASE_URL` variable is set to `https:
 
 ```bash
 $ export GITHUB_BASE_URL=https://github.com/drinchev
-$ ./bin/release phook 0.0.4
+$ ./bin/release.sh phook 0.0.4
 ```
 
 ## Documentation

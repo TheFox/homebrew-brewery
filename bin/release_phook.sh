@@ -5,4 +5,4 @@ export GITHUB_BASE_URL=https://github.com/drinchev
 
 cd "${SCRIPT_BASEDIR}/.."
 
-./bin/release phook $@
+./bin/release.sh phook $@
