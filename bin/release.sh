@@ -23,6 +23,7 @@ if [[ -z "${formula}" ]] || [[ -z "${version}" ]]; then
 fi
 which sha256sum &> /dev/null || { echo 'ERROR: sha256sum not found in PATH'; exit 1; }
 which curl &> /dev/null || { echo 'ERROR: curl not found in PATH'; exit 1; }
+which wget &> /dev/null || { echo 'ERROR: wget not found in PATH'; exit 1; }
 which stat &> /dev/null || { echo 'ERROR: stat not found in PATH'; exit 1; }
 
 set -e
@@ -40,9 +41,11 @@ url="${GITHUB_BASE_URL}/${formula}/archive/${remote_gz_file_name}"
 
 # Download release file from GitHub.
 echo "download gz file '${url}'"
-if ! curl -s -S -L --ssl -o "${tmp_gz_file_path}" "${url}"; then
-	echo 'ERROR: curl failed'
-	exit 1
+if ! wget -O "${tmp_gz_file_path}" "${url}"; then
+	echo 'ERROR: wget failed'
+	if ! curl -s -S -L --ssl -o "${tmp_gz_file_path}" "${url}" ; then
+		exit 1
+	fi
 fi
 
 # Make SHA256 hex for downloaded file.
