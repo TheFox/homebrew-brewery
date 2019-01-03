@@ -1,6 +1,6 @@
 
 class WalletCpp < Formula
-  desc "desc"
+  desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
   url "https://github.com/TheFox/wallet-cpp/archive/%VERSION%.tar.gz"
   sha256 "%SHA256%"
