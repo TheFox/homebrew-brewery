@@ -16,7 +16,7 @@ class WalletCpp < Formula
     Dir.chdir("build") do
       system "cmake",
         "-DPROJECT_INSTALL_PREFIX=#{prefix}",
-        "-DPROJECT_SHARE_PREFIX=#{share}"
+        "-DPROJECT_SHARE_PREFIX=#{share}",
         "-DCMAKE_BUILD_TYPE=release",
         "-DWALLETCPP_GNUPLOT_SUPPORT=ON",
         ".."
