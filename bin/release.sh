@@ -4,6 +4,8 @@ SCRIPT_BASEDIR=$(dirname "$0")
 formula="$1"
 version="$2"
 
+formula_file_path="${formula}.rb"
+
 
 cd "${SCRIPT_BASEDIR}/.."
 
