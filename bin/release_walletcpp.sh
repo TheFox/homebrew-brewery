@@ -5,4 +5,3 @@ SCRIPT_BASEDIR=$(dirname "$0")
 cd "${SCRIPT_BASEDIR}/.."
 
 ./bin/release.sh wallet-cpp $@
-./bin/release.sh wallet-cpp-debug $@
