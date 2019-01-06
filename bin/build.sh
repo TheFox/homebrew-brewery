@@ -9,6 +9,7 @@ SCRIPT_BASENAME=$(basename "$0")
 GITHUB_BASE_URL=${GITHUB_BASE_URL:-https://github.com/TheFox}
 formula="$1"
 version="$2"
+GITHUB_REPO_URL=${GITHUB_REPO_URL:-https://github.com/TheFox/${formula}}
 
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
@@ -37,7 +38,7 @@ formula_skel_file_path="skel/${formula_file_path}"
 remote_gz_file_name="${vversion}.tar.gz"
 local_gz_file_name="${formula}_${remote_gz_file_name}"
 tmp_gz_file_path="tmp/${local_gz_file_name}"
-url="${GITHUB_BASE_URL}/${formula}/archive/${remote_gz_file_name}"
+url="${GITHUB_REPO_URL}/archive/${remote_gz_file_name}"
 
 if [[ ! -f "${tmp_gz_file_path}" ]]; then
 	# Download release file from GitHub.

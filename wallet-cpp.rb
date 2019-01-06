@@ -11,6 +11,8 @@ class WalletCpp < Formula
   depends_on "mstch" => "1.0"
   depends_on "gnuplot" => "5.0"
 
+  conflicts_with "wallet-cpp-debug", :because => "wallet-cpp-debug also ships a wallet binary. wallet-cpp-debug is only for debugging only."
+
   def install
     system "mkdir build"
     Dir.chdir("build") do

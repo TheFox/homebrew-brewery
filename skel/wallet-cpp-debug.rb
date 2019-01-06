@@ -1,5 +1,5 @@
 
-class WalletCpp < Formula
+class WalletCppDebug < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
   url "https://github.com/TheFox/wallet-cpp/archive/%VERSION%.tar.gz"
@@ -11,7 +11,7 @@ class WalletCpp < Formula
   depends_on "mstch" => "1.0"
   depends_on "gnuplot" => "5.0"
 
-  conflicts_with "wallet-cpp-debug", :because => "wallet-cpp-debug also ships a wallet binary. wallet-cpp-debug is only for debugging only."
+  conflicts_with "wallet-cpp", :because => "wallet-cpp also ships a wallet binary. wallet-cpp-debug is for debugging only."
 
   def install
     system "mkdir build"
@@ -19,7 +19,7 @@ class WalletCpp < Formula
       system "cmake",
         "-DCMAKE_INSTALL_PREFIX=#{prefix}",
         "-DPROJECT_SHARE_PREFIX=#{share}",
-        "-DCMAKE_BUILD_TYPE=release",
+        "-DCMAKE_BUILD_TYPE=debug",
         "-DWALLETCPP_GNUPLOT_SUPPORT=ON",
         ".."
       system "make"
