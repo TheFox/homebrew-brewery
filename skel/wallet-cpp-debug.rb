@@ -1,9 +1,9 @@
 
-class WalletCpp < Formula
+class WalletCppDebug < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
-  url "https://github.com/TheFox/wallet-cpp/archive/v0.7.4.tar.gz"
-  sha256 "21a9724024e252303b44c3ed2a18f9965c375dcaf28e520b2cbe908009fa0e49"
+  url "https://github.com/TheFox/wallet-cpp/archive/%VERSION%.tar.gz"
+  sha256 "%SHA256%"
 
   depends_on "cmake" => :build
   depends_on "boost" => "1.62"
@@ -17,7 +17,7 @@ class WalletCpp < Formula
       system "cmake",
         "-DCMAKE_INSTALL_PREFIX=#{prefix}",
         "-DPROJECT_SHARE_PREFIX=#{share}",
-        "-DCMAKE_BUILD_TYPE=release",
+        "-DCMAKE_BUILD_TYPE=debug",
         "-DWALLETCPP_GNUPLOT_SUPPORT=ON",
         ".."
       system "make"

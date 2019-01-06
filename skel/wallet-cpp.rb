@@ -20,7 +20,7 @@ class WalletCpp < Formula
         "-DCMAKE_BUILD_TYPE=release",
         "-DWALLETCPP_GNUPLOT_SUPPORT=ON",
         ".."
-      system "make wallet"
+      system "make"
       bin.install "bin/wallet"
     end
 
