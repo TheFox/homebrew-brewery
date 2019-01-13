@@ -63,7 +63,7 @@ echo "local_filename: '${local_filename}'"
 pkg_version=$(awk '/pkg_version/ { gsub(/[",]/, "", $2); print $2 }' ${bottle_pjson_file})
 
 set -x
-jfrog bt vc ${BINTRAY_REPOSITORY}/${formula}/v${pkg_version}
+jfrog bt vc ${BINTRAY_REPOSITORY}/${formula}/v${pkg_version} || true
 jfrog bt u --publish=true ./${local_filename} ${BINTRAY_REPOSITORY}/${formula}/v${pkg_version} ${remote_filename}
 set +x
 

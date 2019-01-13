@@ -42,5 +42,6 @@ class WalletCpp < Formula
     root_url "https://dl.bintray.com/thefox/bottle"
 
     sha256 "53e318471e0abc3877b2cb2d9bb44f0915c155c07f7e86bcf4670fde9fd39425" => :mojave
+    sha256 "fd3fbc85bfdc1850023370a5660d6f1d395dd2f0838a288b6cc5a290971e565b" => :high_sierra
   end
 end
