@@ -1,4 +1,6 @@
 
+# File type: skel
+
 class Parameters < Formula
   desc "Automatic replace variables in configuration file templates from environment variables."
   homepage "https://github.com/TheFox/parameters"

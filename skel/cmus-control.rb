@@ -1,4 +1,6 @@
 
+# File type: skel
+
 class CmusControl < Formula
   desc "Control cmus with Media Keys << > >> under OS X"
   homepage "https://github.com/TheFox/cmus-control"

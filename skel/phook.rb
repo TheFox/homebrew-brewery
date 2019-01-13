@@ -1,4 +1,6 @@
 
+# File type: skel
+
 class Phook < Formula
   desc "Runs commands around a parent process"
   homepage "https://github.com/drinchev/phook"

@@ -1,4 +1,6 @@
 
+# File type: skel
+
 class WalletCpp < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
