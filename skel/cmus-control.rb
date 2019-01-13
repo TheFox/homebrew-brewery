@@ -1,5 +1,6 @@
 
 # File type: skel
+# Version: %VERSION%
 
 class CmusControl < Formula
   desc "Control cmus with Media Keys << > >> under OS X"

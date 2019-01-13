@@ -1,5 +1,6 @@
 
 # File type: skel
+# Version: %VERSION%
 
 class Parameters < Formula
   desc "Automatic replace variables in configuration file templates from environment variables."
@@ -10,12 +11,28 @@ class Parameters < Formula
   depends_on "cmake" => :build
 
   def install
-    system "./bin/build.sh"
+    args = %W[
+      -DCMAKE_BUILD_TYPE=release
+      -DCMAKE_INSTALL_PREFIX=#{prefix}
+    ]
 
-    bin.install "build_release/bin/parameters"
+    system "mkdir build"
+    Dir.chdir("build") do
+      system "cmake", "..", *args
+      system "make"
+      bin.install "bin/parameters"
+    end
   end
 
   test do
     system "which", "-a", "parameters"
+  end
+
+  bottle do
+    # https://docs.brew.sh/Bottles
+    #rebuild 0
+    root_url "https://dl.bintray.com/thefox/bottle"
+
+    sha256 "e863e57ed2c46c3ecbae425475f415766b2b7d487c307b241089401b491d2e5a" => :mojave
   end
 end

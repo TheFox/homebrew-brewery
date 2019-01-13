@@ -1,5 +1,6 @@
 
 # File type: skel
+# Version: %VERSION%
 
 class Phook < Formula
   desc "Runs commands around a parent process"

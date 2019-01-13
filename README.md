@@ -41,3 +41,9 @@ $ ./bin/release.sh phook 0.0.4
 ## Documentation
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://github.com/Homebrew/brew/blob/master/docs/README.md#readme).
+
+### Local Path
+
+```
+/usr/local/Homebrew/Library/Taps/thefox/homebrew-brewery/
+```
