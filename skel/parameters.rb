@@ -27,13 +27,4 @@ class Parameters < Formula
   test do
     system "which", "-a", "parameters"
   end
-
-  bottle do
-    # https://docs.brew.sh/Bottles
-    #rebuild 0
-    root_url "https://dl.bintray.com/thefox/bottle"
-
-    sha256 "e863e57ed2c46c3ecbae425475f415766b2b7d487c307b241089401b491d2e5a" => :mojave
-    sha256 "6fc07eaba0a2edfcca7dc3eef5b9842948340c94ac816a168f76dbcb2166693e" => :high_sierra
-  end
 end
