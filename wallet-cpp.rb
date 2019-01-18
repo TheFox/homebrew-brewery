@@ -1,12 +1,12 @@
 
 # File type: production
-# Version: v0.7.5
+# Version: v0.8.0
 
 class WalletCpp < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
-  url "https://github.com/TheFox/wallet-cpp/archive/v0.7.5.tar.gz"
-  sha256 "78ff8c5a85e2513199dac4ad3d125c4f7321d207908fefdc50fe01b6ebda4efb"
+  url "https://github.com/TheFox/wallet-cpp/archive/v0.8.0.tar.gz"
+  sha256 "82a076a9f3acf6f9adc922260e42b068409f83ee30a3f83d08000759fd3165a3"
 
   depends_on "cmake" => :build
   depends_on "boost" => ">=1.62"
