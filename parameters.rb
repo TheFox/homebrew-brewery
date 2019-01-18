@@ -1,12 +1,12 @@
 
 # File type: production
-# Version: v1.0.0-rc.4
+# Version: v1.0.0-rc.5
 
 class Parameters < Formula
   desc "Automatic replace variables in configuration file templates from environment variables."
   homepage "https://github.com/TheFox/parameters"
-  url "https://github.com/TheFox/parameters/archive/v1.0.0-rc.4.tar.gz"
-  sha256 "21cec4cce998918973918f8ac5b43b648f3e2fe1c4d5d01ff3a618e1b06923fc"
+  url "https://github.com/TheFox/parameters/archive/v1.0.0-rc.5.tar.gz"
+  sha256 "4de47411570e25cc5c29f9d68f628c24aefeeafcc586e51658633bb5f3eaed97"
 
   depends_on "cmake" => :build
 
