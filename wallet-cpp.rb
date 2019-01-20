@@ -1,13 +1,13 @@
 
 # File type: production
-# Version: v0.8.3
-# Version Short: 0.8.3
+# Version: v0.8.4
+# Version Short: 0.8.4
 
 class WalletCpp < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
   homepage "https://github.com/TheFox/wallet-cpp"
-  url "https://github.com/TheFox/wallet-cpp/archive/v0.8.3.tar.gz"
-  sha256 "0cdace34bc168ddf7b32d035ce96c5403f439acf03316f13f3b0f3f9b4513e82"
+  url "https://github.com/TheFox/wallet-cpp/archive/v0.8.4.tar.gz"
+  sha256 "9db1217dea67fc3b5ac15f8a06667732a3395b6f94aaa08bc715091288fe9c1e"
 
   depends_on "cmake" => :build
   depends_on "boost" => ">=1.62"
@@ -16,12 +16,12 @@ class WalletCpp < Formula
   depends_on "gnuplot" => ">=5.0"
 
   def install
-    sha256_short = "0cdace34bc168ddf7b32d035ce96c5403f439acf03316f13f3b0f3f9b4513e82"[0..7]
+    sha256_short = "9db1217dea67fc3b5ac15f8a06667732a3395b6f94aaa08bc715091288fe9c1e"[0..7]
     args = %W[
       -DCMAKE_BUILD_TYPE=release
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DPROJECT_SHARE_PREFIX=#{share}
-      -DPROJECT_VERSION_FULL=0.8.3
+      -DPROJECT_VERSION_FULL=0.8.4
       -DPROJECT_VERSION_HASH=fake-#{sha256_short}
       -DWALLETCPP_GNUPLOT_SUPPORT=ON
     ]
