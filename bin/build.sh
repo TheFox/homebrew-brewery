@@ -67,6 +67,7 @@ fi
 echo "create ${formula_file_path}"
 sed -e "
 s|%VERSION%|${vversion}|g;
+s|%VERSION_SHORT%|${version}|g;
 s|%SHA256%|${sha256hex}|g;
 /File type:/ s|skel|production|g;
 " "${formula_skel_file_path}" > "${formula_file_path}"

@@ -1,6 +1,7 @@
 
 # File type: skel
 # Version: %VERSION%
+# Version Short: %VERSION_SHORT%
 
 class WalletCpp < Formula
   desc "A spreadsheet likewise C++17 program to track your finances."
@@ -15,10 +16,13 @@ class WalletCpp < Formula
   depends_on "gnuplot" => ">=5.0"
 
   def install
+    sha256_short = "%SHA256%"[0..7]
     args = %W[
       -DCMAKE_BUILD_TYPE=release
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DPROJECT_SHARE_PREFIX=#{share}
+      -DPROJECT_VERSION_FULL=%VERSION_SHORT%
+      -DPROJECT_VERSION_HASH=fake-#{sha256_short}
       -DWALLETCPP_GNUPLOT_SUPPORT=ON
     ]
 
