@@ -22,7 +22,7 @@ class WalletCpp < Formula
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DPROJECT_SHARE_PREFIX=#{share}
       -DPROJECT_VERSION_FULL=%VERSION_SHORT%
-      -DPROJECT_VERSION_HASH=fake-#{sha256_short}
+      -DPROJECT_VERSION_HASH=hb-#{sha256_short}
       -DWALLETCPP_GNUPLOT_SUPPORT=ON
     ]
 
