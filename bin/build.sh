@@ -22,7 +22,7 @@ if [[ -z "${formula}" ]] || [[ -z "${version}" ]]; then
 	echo "version without 'v' at the beginning."
 	exit 3
 fi
-which sha256sum &> /dev/null || { echo 'ERROR: sha256sum not found in PATH'; exit 1; }
+which sha2 &> /dev/null || { echo 'ERROR: sha2 not found in PATH'; exit 1; }
 which curl &> /dev/null || { echo 'ERROR: curl not found in PATH'; exit 1; }
 which wget &> /dev/null || { echo 'ERROR: wget not found in PATH'; exit 1; }
 which stat &> /dev/null || { echo 'ERROR: stat not found in PATH'; exit 1; }
@@ -52,7 +52,8 @@ if [[ ! -f "${tmp_gz_file_path}" ]]; then
 fi
 
 # Make SHA256 hex for downloaded file.
-sha256hex=$(sha256sum "${tmp_gz_file_path}" | awk '{ print $1 }')
+echo "create sha256 for '${tmp_gz_file_path}'"
+sha256hex=$(sha2 -256 -q "${tmp_gz_file_path}" | awk '{ print $1 }')
 echo "sha256 hex '${sha256hex}'"
 
 # Print file type.
