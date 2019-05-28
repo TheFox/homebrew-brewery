@@ -28,7 +28,7 @@ class WalletCpp < Formula
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DPROJECT_SHARE_PREFIX=#{share}
       -DPROJECT_VERSION_FULL=0.8.4
-      -DPROJECT_VERSION_HASH=hb-#{sha256_short}
+      -DPROJECT_VERSION_HASH=brew-#{sha256_short}
     ]
 
     # gnuplot
