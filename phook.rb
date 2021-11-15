@@ -2,8 +2,8 @@
 class Phook < Formula
   desc "Runs commands around a parent process"
   homepage "https://github.com/drinchev/phook"
-  url "https://github.com/drinchev/phook/archive/v0.0.7.tar.gz"
-  sha256 "c182948287c5a8f05cd6b7d1493caade0a0f4f8bb3cbaa82cd9d5527566a2ab0"
+  url "https://github.com/drinchev/phook/archive/v0.0.8.tar.gz"
+  sha256 "918ce5693cccfe25adfc1c8d9e70ec6988955d118aa5a494c350692f369700c4"
 
   depends_on "make" => :build
 
