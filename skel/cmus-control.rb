@@ -11,7 +11,7 @@ class CmusControl < Formula
   depends_on "cmake" => :build
 
   def install
-    system "make", "build/release"
+    system "./bin/build_release.sh"
 
     bin.install "build/release/bin/cmuscontrold"
   end
@@ -38,13 +38,13 @@ class CmusControl < Formula
 
         <key>ProgramArguments</key>
         <array>
-        <string>#{opt_bin}/cmuscontrold</string>
+          <string>#{opt_bin}/cmuscontrold</string>
         </array>
 
         <key>EnvironmentVariables</key>
         <dict>
-        <key>PATH</key>
-        <string>/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin</string>
+          <key>PATH</key>
+          <string>/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin</string>
         </dict>
 
         <key>ProcessType</key> <string>Background</string>
@@ -54,7 +54,7 @@ class CmusControl < Formula
         <key>KeepAlive</key> <true />
 
         <key>Disabled</key> <false />
-        </dict>
+      </dict>
     </plist>
     EOS
   end
