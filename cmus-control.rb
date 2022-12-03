@@ -16,7 +16,7 @@ class CmusControl < Formula
     bin.install "build/release/bin/cmuscontrold"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS.indent
     Since Cmus Control doesn't have the behavior of changing any foreign processes it's highly recommended to deactivate Apples Remote Control Daemon:
 
       launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
@@ -29,7 +29,7 @@ class CmusControl < Formula
 
   plist_options :startup => true, :manual => "cmuscontrold"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS.indent
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
