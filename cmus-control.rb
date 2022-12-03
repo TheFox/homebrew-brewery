@@ -1,12 +1,12 @@
 
 # File type: production
-# Version: v1.1.0
+# Version: v1.2.0
 
 class CmusControl < Formula
   desc "Control cmus with Media Keys << > >> under OS X"
   homepage "https://github.com/TheFox/cmus-control"
-  url "https://github.com/TheFox/cmus-control/archive/v1.1.0.tar.gz"
-  sha256 "cb145c55c278b84d79d5b9ecd9481df33e9d9ab4f48cc231db569d59bb5c617f"
+  url "https://github.com/TheFox/cmus-control/archive/v1.2.0.tar.gz"
+  sha256 "86893293aed440eca0bbeaa46358849d1a072cd10f357476dc3ab1c3501e26db"
 
   depends_on "cmake" => :build
 
