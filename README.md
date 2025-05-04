@@ -5,13 +5,13 @@
 1. Add the `thefox/brewery` tap to brew.
 
 	```bash
-	$ brew tap thefox/brewery
+	brew tap thefox/brewery
 	```
 
 2. Install a formula.
 
 	```bash
-	$ brew install <formula>
+	brew install <formula>
 	```
 
 ## Add a new formulae
@@ -20,13 +20,13 @@
 2. Run release script
 
 	```bash
-	$ ./bin/release.sh name 1.2.3
+	./bin/release.sh name 1.2.3
 	```
 
 3. Test formulae local:
 
 	```bash
-	$ brew install ./name.rb
+	brew install ./name.rb
 	```
 
 ## Add a formulae from foreign Source
