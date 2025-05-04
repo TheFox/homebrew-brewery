@@ -3,12 +3,13 @@
 # Version: %VERSION%
 
 class CmusControl < Formula
-  desc "Control cmus with Media Keys << > >> under OS X"
+  desc "Control cmus with Media Keys << > >> under macOS"
   homepage "https://github.com/TheFox/cmus-control"
   url "https://github.com/TheFox/cmus-control/archive/%VERSION%.tar.gz"
   sha256 "%SHA256%"
 
-  depends_on "cmake" => :build
+  depends_on "zig" => :build
+
   service do
     run [opt_bin/"cmuscontrold"]
     run_type :immediate
@@ -17,9 +18,9 @@ class CmusControl < Formula
   end
 
   def install
-    system "./bin/build_release.sh"
+    system "zig build --release"
 
-    bin.install "build/release/bin/cmuscontrold"
+    bin.install "zig-out/bin/cmuscontrold"
   end
 
   def caveats; <<-EOS
