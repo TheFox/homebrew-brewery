@@ -8,7 +8,7 @@ class CmusControl < Formula
   url "https://github.com/TheFox/cmus-control/archive/%VERSION%.tar.gz"
   sha256 "%SHA256%"
 
-  depends_on "zig" => :build
+  depends_on "zigup" => :build
 
   service do
     run [opt_bin/"cmuscontrold"]
@@ -18,7 +18,8 @@ class CmusControl < Formula
   end
 
   def install
-    system "zig build --release"
+    system "zigup fetch 0.15.1"
+    system "zigup run 0.15.1 build --release"
 
     bin.install "zig-out/bin/cmuscontrold"
   end

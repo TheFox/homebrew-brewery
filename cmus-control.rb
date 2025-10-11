@@ -1,14 +1,14 @@
 
 # File type: production
-# Version: v2.0.0
+# Version: v2.1.0
 
 class CmusControl < Formula
   desc "Control cmus with Media Keys << > >> under macOS"
   homepage "https://github.com/TheFox/cmus-control"
-  url "https://github.com/TheFox/cmus-control/archive/v2.0.0.tar.gz"
-  sha256 "066fdbc1f9875e48346e0f56ac785ef07152b75fde2f3331b0d48b4f117bdf36"
+  url "https://github.com/TheFox/cmus-control/archive/v2.1.0.tar.gz"
+  sha256 "679abad3dfdc27d28f94ffc151be36e295946eea8beb6804602f32c0e09d3167"
 
-  depends_on "zig" => :build
+  depends_on "zigup" => :build
 
   service do
     run [opt_bin/"cmuscontrold"]
@@ -18,7 +18,8 @@ class CmusControl < Formula
   end
 
   def install
-    system "zig build --release"
+    system "zigup fetch 0.15.1"
+    system "zigup run 0.15.1 build --release"
 
     bin.install "zig-out/bin/cmuscontrold"
   end
