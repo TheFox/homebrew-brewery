@@ -1,12 +1,12 @@
 
 # File type: production
-# Version: v2.1.1
+# Version: v2.1.2
 
 class CmusControl < Formula
   desc "Control cmus with Media Keys << > >> under macOS"
   homepage "https://github.com/TheFox/cmus-control"
-  url "https://github.com/TheFox/cmus-control/archive/v2.1.1.tar.gz"
-  sha256 "9d8be8ecaa59c52c70edb4be3e157cc0e49592d18094af25dd9b8113ce4c0809"
+  url "https://github.com/TheFox/cmus-control/archive/v2.1.2.tar.gz"
+  sha256 "fc661a521838972b133700244b1be513e34401988adb4f7cceab96419c02a63d"
 
   depends_on "zigup" => :build
 
