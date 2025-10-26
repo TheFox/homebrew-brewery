@@ -15,4 +15,4 @@ echo 'add to git'
 git add "${formula_file_path}"
 
 echo 'git commit'
-git commit -S -m "${formula} ${version}"
+git commit -m "${formula} ${version}"
